@@ -5,169 +5,443 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FF Elite Services</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-    background:#111;
-    color:white;
+background:#080808;
+color:white;
+overflow-x:hidden;
 }
 
-header{
-    background:linear-gradient(135deg,#ff6a00,#ff0000);
-    text-align:center;
-    padding:60px 20px;
+nav{
+position:fixed;
+top:0;
+width:100%;
+z-index:1000;
+background:rgba(0,0,0,.8);
+backdrop-filter:blur(10px);
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
-header h1{
-    font-size:3rem;
+.logo{
+font-size:1.6rem;
+font-weight:800;
+color:#ff6a00;
 }
 
-header p{
-    margin-top:10px;
-    font-size:1.2rem;
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:
+linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.85)),
+url('https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=2000&q=80');
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
+
+.hero h1{
+font-size:4.5rem;
+color:#ff6a00;
+text-shadow:0 0 30px #ff6a00;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{ text-shadow:0 0 15px #ff6a00; }
+to{ text-shadow:0 0 35px #ff6a00; }
+}
+
+.hero p{
+max-width:700px;
+margin:20px auto;
+font-size:1.2rem;
 }
 
 .btn{
-    display:inline-block;
-    margin-top:20px;
-    padding:12px 25px;
-    background:white;
-    color:black;
-    text-decoration:none;
-    border-radius:5px;
-    font-weight:bold;
+display:inline-block;
+padding:15px 35px;
+border-radius:40px;
+text-decoration:none;
+font-weight:700;
+background:#ff6a00;
+color:white;
+margin:10px;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.08);
+box-shadow:0 0 25px #ff6a00;
 }
 
 section{
-    padding:50px 10%;
+padding:90px 10%;
 }
 
-h2{
-    text-align:center;
-    margin-bottom:30px;
-    color:#ff6a00;
+.title{
+text-align:center;
+font-size:2.7rem;
+color:#ff6a00;
+margin-bottom:50px;
 }
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
 }
 
 .card{
-    background:#1e1e1e;
-    padding:20px;
-    border-radius:10px;
-    text-align:center;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.08);
+border-radius:20px;
+padding:25px;
+text-align:center;
+transition:.4s;
 }
 
-.card h3{
-    color:#ff6a00;
-    margin-bottom:10px;
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px rgba(255,106,0,.5);
+}
+
+.card h1{
+color:#ff6a00;
+font-size:3rem;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
 
 .price{
-    font-size:1.5rem;
-    margin:10px 0;
+font-size:1.8rem;
+font-weight:bold;
+color:#ff6a00;
+margin-top:10px;
+}
+
+.pricing{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.plan{
+background:#121212;
+border-radius:20px;
+padding:35px;
+text-align:center;
+border:1px solid #222;
+}
+
+.plan h3{
+color:#ff6a00;
+font-size:2rem;
+}
+
+.plan .amount{
+font-size:3rem;
+font-weight:800;
+margin:15px 0;
+}
+
+.plan ul{
+list-style:none;
+margin:20px 0;
+}
+
+.plan li{
+padding:8px;
+}
+
+.review-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.review{
+background:#151515;
+padding:25px;
+border-radius:15px;
+}
+
+.faq{
+max-width:900px;
+margin:auto;
+}
+
+.faq details{
+background:#151515;
+padding:20px;
+margin-bottom:15px;
+border-radius:12px;
+}
+
+.contact{
+text-align:center;
 }
 
 footer{
-    text-align:center;
-    padding:20px;
-    background:#000;
+background:black;
+padding:25px;
+text-align:center;
 }
+
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>FF Elite Services</h1>
-    <p>Rank Push • Coaching • Guild Branding • Tournament Hosting</p>
-    <a href="#contact" class="btn">Order Now</a>
-</header>
+<nav>
+<div class="logo">FF ELITE</div>
+<ul>
+<li><a href="#services">Services</a></li>
+<li><a href="#pricing">Pricing</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 
-<section>
-    <h2>Our Services</h2>
+<section class="hero">
 
-    <div class="cards">
+<h1>FF ELITE SERVICES</h1>
 
-        <div class="card">
-            <h3>Rank Push</h3>
-            <p>Fast and secure rank pushing.</p>
-            <div class="price">₹49+</div>
-        </div>
+<p>
+Professional Free Fire gaming services including coaching,
+guild branding, squad assistance, tournament hosting,
+and community support.
+</p>
 
-        <div class="card">
-            <h3>Squad Carry</h3>
-            <p>Play with skilled teammates.</p>
-            <div class="price">₹99+</div>
-        </div>
+<a href="#services" class="btn">Explore Services</a>
 
-        <div class="card">
-            <h3>Coaching</h3>
-            <p>Improve gameplay and strategy.</p>
-            <div class="price">₹99/hr</div>
-        </div>
+<a href="https://wa.me/91XXXXXXXXXX" class="btn">
+Order on WhatsApp
+</a>
 
-        <div class="card">
-            <h3>HUD Setup</h3>
-            <p>Custom sensitivity and HUD advice.</p>
-            <div class="price">₹49</div>
-        </div>
-
-        <div class="card">
-            <h3>Guild Logo</h3>
-            <p>Professional guild logos and banners.</p>
-            <div class="price">₹149+</div>
-        </div>
-
-        <div class="card">
-            <h3>Tournaments</h3>
-            <p>Custom room tournaments and events.</p>
-            <div class="price">Contact Us</div>
-        </div>
-
-    </div>
 </section>
 
 <section>
-    <h2>Why Choose Us?</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>Trusted Service</h3>
-            <p>Customer satisfaction is our priority.</p>
-        </div>
 
-        <div class="card">
-            <h3>Affordable Prices</h3>
-            <p>Best prices for gamers.</p>
-        </div>
+<h2 class="title">Our Stats</h2>
 
-        <div class="card">
-            <h3>Fast Support</h3>
-            <p>Quick response and updates.</p>
-        </div>
-    </div>
+<div class="stats">
+
+<div class="card">
+<h1>500+</h1>
+<p>Orders Completed</p>
+</div>
+
+<div class="card">
+<h1>300+</h1>
+<p>Happy Clients</p>
+</div>
+
+<div class="card">
+<h1>24/7</h1>
+<p>Customer Support</p>
+</div>
+
+<div class="card">
+<h1>99%</h1>
+<p>Satisfaction Rate</p>
+</div>
+
+</div>
+
 </section>
 
-<section id="contact">
-    <h2>Contact Us</h2>
-    <div class="card">
-        <p>WhatsApp: Your Number</p>
-        <p>Discord: Your Discord ID</p>
-        <p>Instagram: @yourpage</p>
-    </div>
+<section id="services">
+
+<h2 class="title">Services</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Rank Assistance</h3>
+<p>Gameplay assistance and progression support.</p>
+<div class="price">₹49+</div>
+</div>
+
+<div class="card">
+<h3>Squad Carry</h3>
+<p>Play with experienced teammates.</p>
+<div class="price">₹99+</div>
+</div>
+
+<div class="card">
+<h3>Coaching</h3>
+<p>Improve aim, strategy and game sense.</p>
+<div class="price">₹99/hr</div>
+</div>
+
+<div class="card">
+<h3>HUD Setup</h3>
+<p>Custom controls and sensitivity guidance.</p>
+<div class="price">₹49</div>
+</div>
+
+<div class="card">
+<h3>Guild Branding</h3>
+<p>Logos, banners and social media assets.</p>
+<div class="price">₹149+</div>
+</div>
+
+<div class="card">
+<h3>Tournament Hosting</h3>
+<p>Custom room events and community tournaments.</p>
+<div class="price">Contact</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="pricing">
+
+<h2 class="title">Pricing Plans</h2>
+
+<div class="pricing">
+
+<div class="plan">
+<h3>Silver</h3>
+<div class="amount">₹99</div>
+<ul>
+<li>Basic Support</li>
+<li>Coaching Tips</li>
+<li>Quick Response</li>
+</ul>
+</div>
+
+<div class="plan">
+<h3>Gold</h3>
+<div class="amount">₹299</div>
+<ul>
+<li>Priority Support</li>
+<li>Advanced Coaching</li>
+<li>Guild Branding</li>
+</ul>
+</div>
+
+<div class="plan">
+<h3>Diamond</h3>
+<div class="amount">₹599</div>
+<ul>
+<li>VIP Support</li>
+<li>Premium Services</li>
+<li>Tournament Access</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+
+<section id="reviews">
+
+<h2 class="title">Customer Reviews</h2>
+
+<div class="review-grid">
+
+<div class="review">
+⭐⭐⭐⭐⭐<br><br>
+Amazing service and great communication.
+<br><br><b>Rahul</b>
+</div>
+
+<div class="review">
+⭐⭐⭐⭐⭐<br><br>
+Professional and very helpful.
+<br><br><b>Akash</b>
+</div>
+
+<div class="review">
+⭐⭐⭐⭐⭐<br><br>
+Great coaching session. Improved my gameplay.
+<br><br><b>GamerX</b>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">FAQ</h2>
+
+<div class="faq">
+
+<details>
+<summary>How do I order?</summary>
+Contact us on WhatsApp.
+</details>
+
+<details>
+<summary>How fast is support?</summary>
+Usually within a few hours.
+</details>
+
+<details>
+<summary>Do you offer coaching?</summary>
+Yes, beginner and advanced coaching is available.
+</details>
+
+</div>
+
+</section>
+
+<section id="contact" class="contact">
+
+<h2 class="title">Contact Us</h2>
+
+<p>📱 WhatsApp: YOUR NUMBER</p>
+<p>🎮 Discord: YOUR DISCORD</p>
+<p>📷 Instagram: @YOURPAGE</p>
+
+<br>
+
+<a href="https://wa.me/91XXXXXXXXXX" class="btn">
+ORDER NOW
+</a>
+
 </section>
 
 <footer>
-    <p>© 2026 FF Elite Services. All Rights Reserved.</p>
+© 2026 FF Elite Services. All Rights Reserved.
 </footer>
 
 </body>
